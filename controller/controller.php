@@ -2,11 +2,13 @@
 
 function storedata($dbconn){
 $hash=password_hash($_POST['hash'],PASSWORD_BCRYPT);
-$statement=$dbconn->prepare("INSERT INTO user (username,email,hash,date_created,time_created) VALUES(:nm,:em,:hsh,NOW(),NOW())");
+$statement=$dbconn->prepare("INSERT INTO user (username,email,hash,active,date_created,time_created) VALUES(:nm,:em,:hsh,:ac,NOW(),NOW())");
+$active="No";
 $data=[
   ":nm"=>$_POST['name'],
   ":em"=>$_POST['email'],
-  ":hsh"=>$hash
+  ":hsh"=>$hash,
+  ":ac"=>$active
 ];
 $statement->execute($data);
 }

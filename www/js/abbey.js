@@ -162,17 +162,27 @@ function messageout(){
 				 const id=value.id
 				 if (value.user_id == recipientId) {
 				 	html += '<li class="chat-left pl-5" ><div class="chat-avatar"><img src="img/user5.png" id="recimage" alt="Quick Chat Admin"><div class="chat-name">Kyle</div></div><div class="chat-text-wrapper"><div class="chat-text"><p>'+value.message+'</p><div class="chat-hour read">'+value.time_created+'<span>✓</span></div></div></div></li>'
-					localStorage.setItem(id,html)
+					// var testArray = [html]
+					// var testArray = testArray.concat(testArray)
+					// localStorage.setItem("message", JSON.stringify(testArray));
+
 				}else{
 					html += '<li class="chat-right pr-5"><div class="chat-text-wrapper"><div class="chat-text"><p>'+value.message+'</p><div class="chat-hour read">'+value.time_created+'<span>✓</span></div></div></div><div class="chat-avatar"><img src="img/user24.png" alt="Quick Chat Admin"><div class="chat-name">Amy</div></div></li>'
-					// localStorage.value.id=html
-					localStorage.setItem(id,html)
+					// var testArray = [html]
+					// var testArray = testArray.concat(testArray)
+					// localStorage.setItem("message", JSON.stringify(testArray));
 
 				}
 				localStorage.setItem("lastkey",value.id)
 			document.getElementById("chat-display").innerHTML = html ;
      });
 
+		   // var data = JSON.parse(localStorage.getItem("message"));
+		 		//   data.forEach(function(value, key){
+				// 		console.log(value)
+		 		//     // console.log(localStorage.getItem());
+		 		// 	document.getElementById("chat-display").innerHTML =value ;
+		 		// });
        }else{
 
          alert(res.failed);
